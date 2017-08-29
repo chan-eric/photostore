@@ -1,12 +1,11 @@
 package com.photostore.demo.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.photostore.demo.domain.PhotoStore;
 import com.photostore.demo.repositories.PhotoStorageRepository;
@@ -20,18 +19,20 @@ public class RestController {
 	@GetMapping("findall")
 	public Iterable<PhotoStore> getAll() {
 		
-		if (1==1) return repo.findAll();
+		Iterable<PhotoStore> x = repo.findAll();
 		
-		List<String> res = new ArrayList<>();
-		res.add("abc");
-		res.add("efg");
-		return null;
+		return x;
+		
 	}
 	
+	
 	@PostMapping("insert/{id}")
-	public String postOne()	{
+	public String postOne(@PathVariable("id") String id, @RequestParam("name") String name)	{
 		
+		PhotoStore entity = new PhotoStore();
+		entity.setName(name);
+		PhotoStore res = repo.save(entity);
 		
-		return "ok";
+		return res.getId();
 	}
 }
