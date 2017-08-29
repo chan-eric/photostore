@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.photostore.demo.domain.PhotoStore;
 import com.photostore.demo.repositories.PhotoStorageRepository;
 
-@org.springframework.web.bind.annotation.RestController
+@RestController
 @RequestMapping("test")
-public class RestController {
+public class PhotoController {
 	
 	@Autowired PhotoStorageRepository repo;
 
