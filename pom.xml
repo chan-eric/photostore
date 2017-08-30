@@ -25,6 +25,7 @@
 		<spring.version>4.3.4.RELEASE</spring.version>
         <spring-data-dynamodb.version>4.4.1</spring-data-dynamodb.version>
         <aws-java-sdk-dynamodb.version>1.11.64</aws-java-sdk-dynamodb.version>
+        <springfox.version>2.7.0</springfox.version>
 	</properties>
 
 	<dependencyManagement>
@@ -55,6 +56,20 @@
             <groupId>com.github.derjust</groupId>
             <artifactId>spring-data-dynamodb</artifactId>
             <version>${spring-data-dynamodb.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+            <scope>compile</scope>
         </dependency>
 
 		<dependency>

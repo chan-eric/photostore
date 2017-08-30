@@ -12,4 +12,6 @@ public interface PhotoStorageRepository extends CrudRepository<PhotoStore, Strin
 
 	
 	List<PhotoStore> findById(String id);
+	
+	List<PhotoStore> findByName(String name);
 }
